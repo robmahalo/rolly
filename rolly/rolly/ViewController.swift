@@ -16,10 +16,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // WHO        . WHAT
-        diceImageView1.image = #imageLiteral(resourceName: "Dice 6")
-        diceImageView2.image = #imageLiteral(resourceName: "Dice Two")
+        
     }
 
-
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        let diceArray = [#imageLiteral(resourceName: "Dice 1"), #imageLiteral(resourceName: "Dice Two"), #imageLiteral(resourceName: "Dice Three"), #imageLiteral(resourceName: "Dice Four"), #imageLiteral(resourceName: "Dice Five"), #imageLiteral(resourceName: "Dice 6")]
+        diceImageView1.image = diceArray[Int.random(in: 0...5)]
+        diceImageView2.image = diceArray[Int.random(in: 0...5)]
+    }
+    
 }
 
